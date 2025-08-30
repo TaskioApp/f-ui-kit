@@ -1,0 +1,28 @@
+{
+	"name": "@taskio/ui-kit",
+	"version": "1.0.0",
+	"description": "A reusable UI kit for Taskio projects",
+	"main": "src/index.ts",
+	"keywords": [
+		"ui",
+		"next",
+		"tailwind",
+		"components"
+	],
+	"author": "Arash Taghavi <arash.taghavi69@gmail.com>",
+	"license": "MIT",
+	"files": [
+		"src"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/your-username/taskio-ui-kit.git"
+	},
+	"bugs": {
+		"url": "https://github.com/your-username/taskio-ui-kit/issues"
+	},
+	"homepage": "https://github.com/your-username/taskio-ui-kit#readme"
+}
