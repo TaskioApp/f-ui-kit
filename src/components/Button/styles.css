@@ -1,16 +1,4 @@
 /** @format */
-@theme {
-	--color-neutral: #64748b;
-	--color-primary: #2563eb;
-	--color-secondary: #9333ea;
-	--color-accent: #f97316;
-	--color-ghost: #94a3b8;
-	--color-info: #06b6d4;
-	--color-success: #16a34a;
-	--color-warning: #f59e0b;
-	--color-error: #dc2626;
-}
-
 .btn {
 	@apply cursor-pointer transition duration-100 ease-in-out rounded-md shadow-md;
 	&:active:focus {
@@ -65,4 +53,8 @@
 .btn-lg {
 	@apply h-16 px-6;
 	font-size: 1.125rem;
+}
+
+.loading-container {
+	@apply absolute inset-0 flex items-center justify-center;
 }

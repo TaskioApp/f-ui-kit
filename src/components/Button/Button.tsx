@@ -34,15 +34,13 @@ export const Button: React.FC<ButtonProps> = ({
 		{ 'btn-shadow': shadow }
 	)
 	return (
-		<>
-			<button className={classNames} {...rest}>
-				<span className={`${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
-				{isLoading && (
-					<span className='absolute inset-0 flex items-center justify-center'>
-						<Loading type={loadingType} variant='ghost' />
-					</span>
-				)}
-			</button>
-		</>
+		<button className={classNames} {...rest}>
+			<span className={`text-white! ${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
+			{isLoading && (
+				<span className='loading-container'>
+					<Loading type={loadingType} variant='ghost' />
+				</span>
+			)}
+		</button>
 	)
 }
