@@ -1,2 +1,4 @@
 /** @format */
+@import 'tailwindcss';
 @import './components/Button/index.css';
+@import './components/Loading/index.css';

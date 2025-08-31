@@ -1,40 +1,48 @@
 /** @format */
 
 import { JSX } from 'react'
-import { ButtonProps, ButtonShape } from './types'
+import { ButtonProps } from './types'
 import { Size } from '@/types/size.type'
 
 import classnames from 'classnames'
+import { Loading } from '../Loading'
 
 const SizeClasses: Record<Size, string> = {
-	tiny: 'btn-tiny',
-	small: 'btn-small',
-	normal: 'btn-normal',
-	large: 'btn-large'
-}
-
-const ShapeClasses: Record<ButtonShape, string> = {
-	default: '',
-	full: 'btn-block',
-	square: 'btn-square',
-	wide: 'btn-wide'
+	xs: 'btn-xs',
+	sm: 'btn-sm',
+	md: 'btn-md',
+	lg: 'btn-lg'
 }
 
 export const Button: React.FC<ButtonProps> = ({
 	isOutline = false,
-	shape = 'default',
 	isLink = false,
 	variant = 'primary',
-	size = 'normal',
-	children
+	size = 'md',
+	shadow = false,
+	isLoading = false,
+	loadingType = 'ring',
+	children,
+	...rest
 }: ButtonProps): JSX.Element => {
 	const classNames = classnames(
-		'btn',
+		'btn relative',
 		{ 'btn-outline': isOutline },
 		{ 'btn-link': isLink },
 		{ [`btn-${variant}`]: variant },
 		{ [`${SizeClasses[size]}`]: size },
-		{ [`${ShapeClasses[shape]}`]: shape }
+		{ 'btn-shadow': shadow }
 	)
-	return <button className={classNames}>{children}</button>
+	return (
+		<>
+			<button className={classNames} {...rest}>
+				<span className={`${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
+				{isLoading && (
+					<span className='absolute inset-0 flex items-center justify-center'>
+						<Loading type={loadingType} variant='ghost' />
+					</span>
+				)}
+			</button>
+		</>
+	)
 }

@@ -1,3 +1,3 @@
 /** @format */
 
-export type Size = 'tiny' | 'small' | 'normal' | 'large'
+export type Size = 'xs' | 'sm' | 'md' | 'lg'

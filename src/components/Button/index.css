@@ -1,14 +1,4 @@
 /** @format */
-
-.btn {
-	@apply no-underline gap-2 h-12 px-7 border inline-flex cursor-pointer select-none;
-	@apply items-center justify-center border-transparent text-center transition duration-100 ease-in-out rounded-lg;
-	&:active:hover,
-	&:active:focus {
-		transform: scale(0.97);
-	}
-}
-
 @theme {
 	--color-neutral: #64748b;
 	--color-primary: #2563eb;
@@ -21,6 +11,16 @@
 	--color-error: #dc2626;
 }
 
+.btn {
+	@apply cursor-pointer transition duration-100 ease-in-out rounded-md shadow-md;
+	&:active:focus {
+		transform: scale(0.95);
+	}
+}
+
+.btn-shadow {
+	@apply shadow-[0_8px_15px_rgba(0,0,0,0.3),0_4px_6px_rgba(0,0,0,0.2)];
+}
 .btn-neutral {
 	@apply bg-neutral;
 }
@@ -50,33 +50,19 @@
 	@apply bg-error;
 }
 
-.btn-tiny {
-	@apply bg-error;
-}
-
-.btn-small {
-	@apply bg-error;
-}
-
-.btn-tiny {
+.btn-xs {
 	@apply h-6 px-2;
 	font-size: 0.75rem;
 }
-.btn-small {
+.btn-sm {
 	@apply h-8 px-3;
 	font-size: 0.875rem;
 }
-.btn-normal {
+.btn-md {
 	@apply h-12 px-4;
 	font-size: 0.875rem;
 }
-.btn-large {
+.btn-lg {
 	@apply h-16 px-6;
 	font-size: 1.125rem;
-}
-.btn-wide {
-	@apply w-64 flex-nowrap;
-}
-.btn-block {
-	@apply w-full;
 }
