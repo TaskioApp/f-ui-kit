@@ -17,7 +17,7 @@ export const Input: React.FC<InputProps> = ({
 	...rest
 }: InputProps) => {
 	const classNames = classnames(`input ${icon ? 'pl-5!' : ''}`)
-
+	console.log('formState', formState)
 	return (
 		<div className='relative group'>
 			<label htmlFor={field.name} className='label'>
@@ -35,6 +35,7 @@ export const Input: React.FC<InputProps> = ({
 			/>
 			<span className='icon-container'>{icon}</span>
 			{required && <span className='star'>*</span>}
+			{fieldState?.error?.message && <span className='text-error! text-[0.8rem]!'>{fieldState?.error?.message}</span>}
 		</div>
 	)
 }
