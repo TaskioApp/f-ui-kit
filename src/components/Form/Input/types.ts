@@ -5,9 +5,9 @@ import { ControllerRenderProps, FieldValues, FormState, ControllerFieldState } f
 
 export type InputTypes = 'text' | 'password'
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputProps<IFormInput extends FieldValues> = InputHTMLAttributes<HTMLInputElement> & {
 	field: ControllerRenderProps<FieldValues, string>
-	formState: Record<string, any>
+	formState: FormState<IFormInput>
 	fieldState: ControllerFieldState
 	label?: string
 	required?: boolean

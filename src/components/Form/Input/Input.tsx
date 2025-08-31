@@ -2,8 +2,9 @@
 
 import classnames from 'classnames'
 import { InputProps } from './types'
+import { FieldValues } from 'react-hook-form'
 
-export const Input: React.FC<InputProps> = ({
+export const Input = <T extends FieldValues>({
 	field,
 	formState,
 	fieldState,
@@ -15,9 +16,8 @@ export const Input: React.FC<InputProps> = ({
 	className = '',
 	icon,
 	...rest
-}: InputProps) => {
+}: InputProps<T>) => {
 	const classNames = classnames(`input ${icon ? 'pl-5!' : ''}`)
-	console.log('formState', formState)
 	return (
 		<div className='relative group'>
 			<label htmlFor={field.name} className='label'>
