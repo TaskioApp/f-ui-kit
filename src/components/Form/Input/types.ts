@@ -1,5 +1,6 @@
 /** @format */
 
+import { Size } from '@/types/size.type'
 import { InputHTMLAttributes, ReactNode } from 'react'
 import { ControllerRenderProps, FieldValues, FormState, ControllerFieldState } from 'react-hook-form'
 
@@ -16,4 +17,5 @@ export type InputProps<IFormInput extends FieldValues> = InputHTMLAttributes<HTM
 	hiddenLabel?: boolean
 	className?: string
 	icon?: ReactNode
+	inputSize?: Size
 }

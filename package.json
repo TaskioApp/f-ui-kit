@@ -15,7 +15,8 @@
 		"src"
 	],
 	"scripts": {
-		"build": "tsc"
+		"build": "tsc",
+		"watch":"npx @tailwindcss/cli -i ./src/styles.css -o ./src/dist/styles.css --watch"
 	},
 	"repository": {
 		"type": "git",

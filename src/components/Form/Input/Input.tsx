@@ -3,6 +3,13 @@
 import classnames from 'classnames'
 import { InputProps } from './types'
 import { FieldValues } from 'react-hook-form'
+import { Size } from '@/types/size.type'
+const SizeClasses: Record<Size, string> = {
+	xs: 'input-xs',
+	sm: 'input-sm',
+	md: 'input-md',
+	lg: 'input-lg'
+}
 
 export const Input = <T extends FieldValues>({
 	field,
@@ -14,10 +21,11 @@ export const Input = <T extends FieldValues>({
 	placeholder = undefined,
 	hiddenLabel = false,
 	className = '',
+	inputSize = 'md',
 	icon,
 	...rest
 }: InputProps<T>) => {
-	const classNames = classnames(`input ${icon ? 'pl-5!' : ''}`)
+	const classNames = classnames(`input ${icon ? 'pl-5!' : ''}`, { [`${SizeClasses[inputSize]}`]: inputSize })
 	return (
 		<div className='relative group'>
 			<label htmlFor={field.name} className='label'>
