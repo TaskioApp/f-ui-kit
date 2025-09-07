@@ -14,7 +14,7 @@ const SizeClasses: Record<Size, string> = {
 	lg: 'btn-lg'
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: (React.FC<ButtonProps>) = ({
 	isOutline = false,
 	isLink = false,
 	variant = 'primary',
