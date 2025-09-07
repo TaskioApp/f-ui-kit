@@ -9,5 +9,5 @@ type InputIconProps = {
 }
 
 export const InputIcon: React.FC<InputIconProps> = ({ Icon, size = 20, color = '#3c3c3c' }: InputIconProps) => {
-	return <Icon size={20} color={color} />
+	return <Icon size={size} color={color} />
 }

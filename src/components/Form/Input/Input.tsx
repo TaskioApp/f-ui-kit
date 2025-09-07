@@ -26,7 +26,9 @@ export const Input = <T extends FieldValues>({
 	icon,
 	...rest
 }: InputProps<T>): JSX.Element => {
-	const classNames = classnames(`input ${icon ? 'pl-5!' : ''}`, { [`${SizeClasses[inputSize]}`]: inputSize })
+	const classNames = classnames(`input ${className}`, {
+		[`${SizeClasses[inputSize]}`]: inputSize
+	})
 
 	const errorMessage = useMemo(() => {
 		const message = fieldState?.error?.message
@@ -37,9 +39,11 @@ export const Input = <T extends FieldValues>({
 
 	return (
 		<div className='relative group'>
-			<label htmlFor={field.name} className='label'>
-				{label}
-			</label>
+			{!errorMessage && (
+				<label htmlFor={field.name} className='label'>
+					{label}
+				</label>
+			)}
 			<input
 				id={field.name}
 				type={type}
@@ -53,7 +57,7 @@ export const Input = <T extends FieldValues>({
 			/>
 			<span className='icon-container'>{icon}</span>
 			{required && <span className='star'>*</span>}
-			{errorMessage && <span className='text-error! text-[0.8rem]!'>{errorMessage}</span>}
+			{errorMessage && <div className='text-error! text-[0.6rem]! absolute top-0'>{errorMessage}</div>}
 		</div>
 	)
 }
