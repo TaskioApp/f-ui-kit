@@ -26,16 +26,16 @@ export const Input = <T extends FieldValues>({
 	icon,
 	...rest
 }: InputProps<T>): JSX.Element => {
-	const classNames = classnames(`input ${fieldState?.error?.message ? 'error' : ''}  ${className}`, {
-		[`${SizeClasses[inputSize]}`]: inputSize
-	})
-
 	const errorMessage = useMemo(() => {
 		const message = fieldState?.error?.message
 		if (!message || !label) return ''
 
 		return message.replace(field.name, label)
 	}, [fieldState?.error?.message, label, field.name])
+
+	const classNames = classnames(`input ${className}`, {
+		[`${SizeClasses[inputSize]}`]: inputSize
+	})
 
 	return (
 		<div className='relative group'>
@@ -57,7 +57,7 @@ export const Input = <T extends FieldValues>({
 			/>
 			<span className='icon-container'>{icon}</span>
 			{required && <span className='star'>*</span>}
-			<div className={errorMessage ? 'error-message' : ''}>{errorMessage}</div>
+			{errorMessage && <div className='text-error! text-[0.6rem]! absolute top-0'>{errorMessage}</div>}
 		</div>
 	)
 }

@@ -28,9 +28,3 @@
 .input-lg {
 	font-size: 1.125rem;
 }
-.error {
-	@apply bg-red-900/10! transition-all duration-200 ease-in border-error;
-}
-.error-message {
-	@apply text-error! text-[0.6rem]! absolute -top-3 transition-all duration-100 ease-in;
-}
