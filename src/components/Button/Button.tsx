@@ -14,7 +14,7 @@ const SizeClasses: Record<Size, string> = {
 	lg: 'btn-lg'
 }
 
-export const Button: (React.FC<ButtonProps>) = ({
+export const Button: React.FC<ButtonProps> = ({
 	isOutline = false,
 	isLink = false,
 	variant = 'primary',
@@ -35,7 +35,7 @@ export const Button: (React.FC<ButtonProps>) = ({
 	)
 	return (
 		<button className={classNames} {...rest}>
-			<span className={`text-white! ${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
+			<span className={`${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
 			{isLoading && (
 				<span className='loading-container'>
 					<Loading type={loadingType} variant='ghost' />

@@ -37,6 +37,9 @@
 .btn-error {
 	@apply bg-error;
 }
+.btn-link {
+	@apply bg-transparent p-0! underline! underline-offset-4 shadow-none;
+}
 
 .btn-xs {
 	@apply h-6 px-2;
