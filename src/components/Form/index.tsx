@@ -2,9 +2,9 @@
 
 import { ReactElement } from 'react'
 import { Input } from './Input'
-import { TextArea } from './TextArea'
+import { OtpInput } from './OtpInput'
 
 export const FormElement = ({ children }: { children: ReactElement }) => children
 
 FormElement.Input = Input
-FormElement.TextArea = TextArea
+FormElement.OtpInput = OtpInput

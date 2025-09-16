@@ -1,0 +1,36 @@
+/** @format */
+.input {
+	@apply p-2 border-0 border-b-2 border-gray-300 transition-colors duration-200 my-1;
+
+	&:focus {
+		@apply border-b-2 border-primary outline-none;
+	}
+}
+.label {
+	@apply absolute top-0 text-[0.6rem] opacity-0 transition-opacity duration-200 ease-in-out group-focus-within:opacity-100;
+}
+.star {
+	@apply absolute right-0 top-0 text-error text-xs;
+}
+.icon-container {
+	@apply absolute -left-6 bottom-1;
+}
+
+.input-xs {
+	font-size: 0.75rem;
+}
+.input-sm {
+	font-size: 0.875rem;
+}
+.input-md {
+	font-size: 0.875rem;
+}
+.input-lg {
+	font-size: 1.125rem;
+}
+.error {
+	@apply bg-red-900/10! transition-all duration-200 ease-in border-error;
+}
+.error-message {
+	@apply text-error! text-[0.6rem]! absolute -top-3 transition-all duration-100 ease-in;
+}
