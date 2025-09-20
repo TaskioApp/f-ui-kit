@@ -5,7 +5,7 @@ import { ButtonProps } from './types'
 import { Size } from '@/types/size.type'
 
 import classnames from 'classnames'
-import { Loading } from '../Loading'
+import { Loading } from '@taskio/ui-kit'
 
 const SizeClasses: Record<Size, string> = {
 	xs: 'btn-xs',

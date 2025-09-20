@@ -1,5 +1,7 @@
 /** @format */
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--color-neutral: #64748b;
 	--color-primary: #2563eb;
@@ -15,3 +17,4 @@
 @import './components/Button/styles.css';
 @import './components/Loading/styles.css';
 @import './components/Form/styles.css';
+@import './components/DataTable/styles.css';

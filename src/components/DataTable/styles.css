@@ -1,0 +1,27 @@
+/** @format */
+.taskio-table {
+	@apply w-full;
+}
+
+.taskio-table th {
+	@apply bg-gray-300 dark:bg-inherit py-2;
+}
+.taskio-table td {
+	@apply text-center border-b-1 py-2;
+}
+.taskio-pagination {
+	@apply flex flex-col md:flex-row space-y-2 md:space-y-0 items-center justify-between w-full p-2 text-xs shadow bg-gray-100 dark:bg-gray-800;
+}
+.taskio-pagination-page {
+	@apply flex flex-col w-full md:w-auto md:flex-row space-y-2 md:space-y-0 space-x-2 items-center;
+}
+.taskio-pagination-page .right-side {
+	@apply flex w-full md:w-auto justify-between md:justify-start space-x-1 items-center;
+}
+
+.taskio-pagination-button {
+	@apply flex space-x-2;
+}
+.taskio-pagination-button button {
+	@apply cursor-pointer disabled:cursor-auto;
+}
