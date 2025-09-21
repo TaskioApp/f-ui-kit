@@ -1,7 +1,7 @@
 /** @format */
 
 import { flexRender, getCoreRowModel, RowData, useReactTable } from '@tanstack/react-table'
-import { Dispatch, JSX, SetStateAction } from 'react'
+import { Dispatch, JSX, SetStateAction, useEffect, useState } from 'react'
 import { Meta, PaginationRequest, TableProps } from './types'
 import { Loading } from '@taskio/ui-kit'
 
@@ -63,6 +63,12 @@ export const DataTable = <TData extends RowData>({
 }
 
 const Pagination = ({ meta, setFilters }: { meta: Meta; setFilters: Dispatch<SetStateAction<PaginationRequest>> }) => {
+	const [page, setPage] = useState<{ current_page: number; per_page: number }>({ current_page: 1, per_page: 10 })
+
+	useEffect(() => {
+		setPage({ current_page: meta?.current_page, per_page: meta?.per_page })
+	}, [meta?.current_page, meta?.per_page])
+
 	return (
 		<div className='taskio-pagination'>
 			<div className='taskio-pagination-button'>
@@ -104,11 +110,12 @@ const Pagination = ({ meta, setFilters }: { meta: Meta; setFilters: Dispatch<Set
 						<span className='hidden md:inline'>| </span> Go to page:
 						<input
 							type='number'
-							defaultValue={meta?.current_page}
+							value={page.current_page}
 							max={meta?.last_page}
 							min={1}
 							onChange={e => {
 								const page = Number(e.target.value)
+								setPage({ current_page: meta?.current_page, per_page: meta?.per_page })
 								setFilters((p: PaginationRequest) => ({ ...p, page }))
 							}}
 							className='border p-1 rounded w-16 ml-1'
@@ -116,8 +123,11 @@ const Pagination = ({ meta, setFilters }: { meta: Meta; setFilters: Dispatch<Set
 					</span>
 
 					<select
-						value={meta?.per_page}
-						onChange={e => setFilters((p: PaginationRequest) => ({ ...p, per_page: Number(e.target.value) }))}
+						value={page?.per_page}
+						onChange={e => {
+							setFilters((p: PaginationRequest) => ({ ...p, per_page: Number(e.target.value) }))
+							setPage({ current_page: meta?.current_page, per_page: meta?.per_page })
+						}}
 						className='border p-1 rounded'>
 						{[10, 15, 20, 30, 50].map(size => (
 							<option key={size} value={size}>

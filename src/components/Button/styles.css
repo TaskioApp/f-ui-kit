@@ -1,6 +1,6 @@
 /** @format */
 .btn {
-	@apply cursor-pointer transition duration-100 ease-in-out rounded-md shadow-md;
+	@apply cursor-pointer transition duration-100 ease-in-out rounded-md shadow-md text-white;
 	&:active:focus {
 		transform: scale(0.95);
 	}
