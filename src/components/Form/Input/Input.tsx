@@ -41,7 +41,7 @@ export const Input = <T extends FieldValues>({
 		<div className='relative group'>
 			{!errorMessage && (
 				<label htmlFor={field.name} className='label'>
-					{label}
+					{!hiddenLabel && label}
 				</label>
 			)}
 			<input

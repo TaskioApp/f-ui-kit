@@ -1,0 +1,5 @@
+/** @format */
+
+.card {
+	@apply flex w-full p-2 border rounded-md shadow border-gray-100 dark:border-gray-800;
+}

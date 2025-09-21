@@ -62,7 +62,7 @@ export const DataTable = <TData extends RowData>({
 	)
 }
 
-const Pagination = ({ meta, setFilters }: { meta: Meta; setFilters: Dispatch<SetStateAction<any>> }) => {
+const Pagination = ({ meta, setFilters }: { meta: Meta; setFilters: Dispatch<SetStateAction<PaginationRequest>> }) => {
 	return (
 		<div className='taskio-pagination'>
 			<div className='taskio-pagination-button'>

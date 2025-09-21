@@ -5,7 +5,7 @@ import { Dispatch, SetStateAction } from 'react'
 
 export type TableProps<TData extends RowData> = {
 	data?: PaginationResponse<TData>
-	columns: ColumnDef<TData, any>[]
+	columns: ColumnDef<TData, unknown>[]
 	title?: string
 	isLoading: boolean
 	setFilters: Dispatch<SetStateAction<PaginationRequest>>

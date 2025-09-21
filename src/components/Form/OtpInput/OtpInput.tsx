@@ -15,7 +15,7 @@ const SizeClasses: Record<Size, string> = {
 
 export const OtpInput = <T extends FieldValues>({
 	field,
-	formState,
+	// formState,
 	fieldState,
 	label,
 	required = false,
