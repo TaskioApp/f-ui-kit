@@ -16,7 +16,7 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"watch":"npx @tailwindcss/cli -i ./src/styles.css -o ./src/dist/styles.css --watch"
+		"watch": "npx @tailwindcss/cli -i ./src/styles.css -o ./src/dist/styles.css --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -28,10 +28,11 @@
 	"homepage": "https://github.com/your-username/taskio-ui-kit#readme",
 	"devDependencies": {
 		"@tailwindcss/cli": "^4.1.12",
-		"tailwindcss": "^4.1.12",
+		"classnames": "^2.5.1",
 		"react-hook-form": "^7.62.0",
 		"react-icons": "^5.5.0",
-		"classnames": "^2.5.1"
+		"tailwindcss": "^4.1.12",
+		"@heroui/tooltip": "^2.2.23"
 	},
 	"dependencies": {
 		"react-icons": "^5.5.0"

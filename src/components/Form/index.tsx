@@ -5,8 +5,10 @@ import { Input } from './Input'
 import { OtpInput } from './OtpInput'
 import { InputIcon } from './Input/InputIcon'
 
-export const FormElement = ({ children }: { children: ReactElement }) => children
+const BaseFormElement = ({ children }: { children: ReactElement }) => <div className=''>{children}</div>
 
-FormElement.Input = Input
-FormElement.OtpInput = OtpInput
-FormElement.InputIcon = InputIcon
+export const FormElement = Object.assign(BaseFormElement, {
+	Input,
+	OtpInput,
+	InputIcon
+})
