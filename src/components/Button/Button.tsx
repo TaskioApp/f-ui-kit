@@ -23,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
 	isLoading = false,
 	loadingType = 'ring',
 	children,
+	icon,
 	...rest
 }: ButtonProps): JSX.Element => {
 	const classNames = classnames(
@@ -35,7 +36,10 @@ export const Button: React.FC<ButtonProps> = ({
 	)
 	return (
 		<button className={classNames} {...rest}>
-			<span className={`${isLoading ? 'blur-[1px]' : ''}`}>{children}</span>
+			<span className={`flex items-center  ${isLoading ? 'blur-[1px]' : ''}`}>
+				{icon && <span className='mr-1'>{icon}</span>}
+				{children}
+			</span>
 			{isLoading && (
 				<span className='loading-container'>
 					<Loading type={loadingType} variant='ghost' />

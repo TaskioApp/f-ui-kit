@@ -9,6 +9,7 @@ export type TableProps<TData extends RowData> = {
 	title?: string
 	isLoading: boolean
 	setFilters: Dispatch<SetStateAction<PaginationRequest>>
+	pagination?: boolean
 }
 
 export type PaginationResponse<T> = {

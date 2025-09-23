@@ -10,7 +10,8 @@ export const DataTable = <TData extends RowData>({
 	setFilters,
 	columns,
 	title,
-	isLoading = true
+	isLoading = true,
+	pagination = true
 }: TableProps<TData>): JSX.Element => {
 	const table = useReactTable({
 		data: data?.data ?? [],
@@ -57,7 +58,7 @@ export const DataTable = <TData extends RowData>({
 					</table>
 				)}
 			</div>
-			{data?.meta && <Pagination meta={data?.meta} setFilters={setFilters} />}
+			{pagination && data?.meta && <Pagination meta={data?.meta} setFilters={setFilters} />}
 		</>
 	)
 }

@@ -2,12 +2,15 @@
 .taskio-table {
 	@apply w-full;
 }
+.taskio-table tr:nth-child(even) {
+	@apply bg-gray-200 dark:bg-gray-800;
+}
 
 .taskio-table th {
 	@apply bg-gray-300 dark:bg-inherit py-2;
 }
 .taskio-table td {
-	@apply text-center border-b-1 py-2;
+	@apply text-center  py-2;
 }
 .taskio-pagination {
 	@apply flex flex-col md:flex-row space-y-2 md:space-y-0 items-center justify-between w-full p-2 text-xs shadow bg-gray-100 dark:bg-gray-800;
