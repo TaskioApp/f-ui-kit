@@ -5,12 +5,12 @@ import { ButtonProps } from './types'
 
 export const Button = Object.assign(BaseButton, {
 	Search: (props: ButtonProps) => (
-		<BaseButton {...props} icon={<Icon.Search />}>
+		<BaseButton {...props} disabled={props.isLoading} icon={<Icon.Search />}>
 			Search
 		</BaseButton>
 	),
 	Reset: (props: ButtonProps) => (
-		<BaseButton {...props} variant='error' icon={<Icon.Close />}>
+		<BaseButton {...props} variant='error' disabled={props.isLoading} icon={<Icon.Close />}>
 			Remove
 		</BaseButton>
 	)

@@ -2,7 +2,13 @@
 .btn {
 	@apply cursor-pointer transition duration-100 ease-in-out rounded-md shadow-md text-white;
 	&:active:focus {
-		transform: scale(0.95);
+		@apply scale-95;
+	}
+	&:hover {
+		@apply brightness-110;
+	}
+	&:disabled {
+		@apply cursor-not-allowed;
 	}
 }
 
@@ -50,8 +56,8 @@
 	font-size: 0.875rem;
 }
 .btn-md {
-	@apply h-12 px-4;
-	font-size: 0.875rem;
+	@apply px-3 py-2;
+	font-size: 0.775rem;
 }
 .btn-lg {
 	@apply h-16 px-6;
