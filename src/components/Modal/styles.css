@@ -1,11 +1,16 @@
 /** @format */
 
 .modal {
-	@apply flex w-full flex-col pt-2 pb-3 border rounded-md shadow border-gray-100 dark:border-gray-600;
+	@apply fixed inset-0 z-50 flex items-center justify-center bg-black/70 text-gray-300 dark:text-gray-600;
 }
-
-.modal-title {
-	@apply flex justify-center items-center border-b-1 p-2 border-gray-300 dark:border-gray-600;
+.modal-body {
+	@apply bg-white rounded-lg shadow-lg w-full max-w-md mx-4;
+}
+.modal-close-button {
+	@apply cursor-pointer text-gray-500 hover:text-gray-700;
+}
+.modal-header {
+	@apply flex justify-between items-center p-4 border-b;
 }
 .modal-body {
 }

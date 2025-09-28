@@ -9,4 +9,6 @@ export type ModalProps = {
 	icon?: ReactNode
 	className?: string
 	footer?: ReactNode
+	onClose: () => void
+	isOpen: boolean
 }

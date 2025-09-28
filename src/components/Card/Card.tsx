@@ -1,8 +1,9 @@
 /** @format */
 
+import { FC } from 'react'
 import { CardProps } from './types'
 
-export const Card = ({ children, icon, title, footer, className }: CardProps) => {
+export const Card: FC<CardProps> = ({ children, icon, title, footer, className }: CardProps) => {
 	return (
 		<div className={`card ${className}`}>
 			<div className='card-title'>
