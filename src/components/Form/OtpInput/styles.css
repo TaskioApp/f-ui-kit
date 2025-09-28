@@ -31,6 +31,10 @@
 .error {
 	@apply bg-red-900/10! transition-all duration-200 ease-in border-error;
 }
-.error-message {
-	@apply text-error! text-[0.6rem]! absolute -top-3 transition-all duration-100 ease-in;
+
+.tooltip-container {
+	@apply bg-red-500  text-red-50 rounded-md px-2 py-1 text-xs;
+}
+.tooltip-icon {
+	@apply text-error absolute top-0 right-0;
 }

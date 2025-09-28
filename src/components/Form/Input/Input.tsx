@@ -5,6 +5,8 @@ import { InputProps } from './types'
 import { FieldValues } from 'react-hook-form'
 import { Size } from '@/types/size.type'
 import { JSX, useMemo } from 'react'
+import { Tooltip } from '@heroui/tooltip'
+import { Icon } from '../../Icons'
 const SizeClasses: Record<Size, string> = {
 	xs: 'input-xs',
 	sm: 'input-sm',
@@ -57,7 +59,11 @@ export const Input = <T extends FieldValues>({
 			/>
 			<span className='icon-container'>{icon}</span>
 			{required && <span className='star'>*</span>}
-			<div className={errorMessage ? 'error-message' : ''}>{errorMessage}</div>
+			{errorMessage && (
+				<Tooltip content={errorMessage} className='tooltip-container'>
+					<Icon.Info className='tooltip-icon' />
+				</Tooltip>
+			)}
 		</div>
 	)
 }
